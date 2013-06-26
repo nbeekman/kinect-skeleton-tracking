@@ -1,0 +1,10 @@
+#kinectSkeletonBox {
+  margin-left: 20px;    
+  background-color: #000000;
+  width: 640px;
+  height: 480px;
+}
+/* hiding zigfu logo */
+div:last-of-type {
+  visibility: hidden;
+} 
