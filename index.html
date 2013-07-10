@@ -64,7 +64,11 @@
           particle.position.y = 5000;
           particle.position.z = 5000;
           particle.position.multiplyScalar(Math.random() * 3 + 50);
-          particle.scale.x = particle.scale.y = 10;
+          if(i==1){ //make the head 2.5x bigger than rest of joints
+            particle.scale.x = particle.scale.y = 25;
+          }else{
+            particle.scale.x = particle.scale.y = 10;
+          }
           particle.material = material;
           
           k_scene.add(particle);
@@ -75,14 +79,13 @@
         drawSkeletonLine(zig.Joint.Head, zig.Joint.Neck);
         drawSkeletonLine(zig.Joint.Neck, zig.Joint.LeftShoulder);
         drawSkeletonLine(zig.Joint.Neck, zig.Joint.RightShoulder);
-        drawSkeletonLine(zig.Joint.LeftShoulder, zig.Joint.Torso);
-        drawSkeletonLine(zig.Joint.RightShoulder, zig.Joint.Torso);
+        drawSkeletonLine(zig.Joint.LeftShoulder, zig.Joint.LeftHip);
+        drawSkeletonLine(zig.Joint.RightShoulder, zig.Joint.RightHip);
         drawSkeletonLine(zig.Joint.LeftShoulder, zig.Joint.LeftElbow);
         drawSkeletonLine(zig.Joint.LeftElbow, zig.Joint.LeftHand);
         drawSkeletonLine(zig.Joint.RightShoulder, zig.Joint.RightElbow);
         drawSkeletonLine(zig.Joint.RightElbow, zig.Joint.RightHand);
-        drawSkeletonLine(zig.Joint.Torso, zig.Joint.LeftHip);
-        drawSkeletonLine(zig.Joint.Torso, zig.Joint.RightHip);
+        drawSkeletonLine(zig.Joint.LeftHip, zig.Joint.RightHip);
         drawSkeletonLine(zig.Joint.LeftHip, zig.Joint.LeftKnee);
         drawSkeletonLine(zig.Joint.LeftKnee, zig.Joint.LeftFoot);
         drawSkeletonLine(zig.Joint.RightHip, zig.Joint.RightKnee);
@@ -93,7 +96,7 @@
         var geometry = new THREE.Geometry();
         geometry.vertices.push(skeletonPoints[joint1].position);
         geometry.vertices.push(skeletonPoints[joint2].position);
-        var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xffffff}));
+        var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xffffff, linewidth: 10}));
         k_scene.add(line);
       }
 
@@ -119,7 +122,7 @@
         
           var kinectFeedPart = user.skeleton[i];
           //Get data information for each joint.
-          if( typeof kinectFeedPart == 'undefined') { //If joint data isnt avaiable place dot offscreen and continue on.
+          if( typeof kinectFeedPart == 'undefined' || kinectFeedPart.id == 3 /*hiding torso*/ ) { //If joint data isnt avaiable place dot offscreen and continue on.
             var object = skeletonPoints[i];
             object.position.x = 5000;
             object.position.y = 5000;
