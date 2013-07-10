@@ -6,123 +6,126 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  	<script src="js/jquery.1.7.1.min.js"></script>
   	<script type="text/javascript" src="js/three.min.js"></script>
   	<script type="text/javascript" src="js/requestAnimationFrame.js"></script>
-  	<script src="http://cdn.zigfu.com/zigjs/zig.min.js"></script>
+  	<script src="js/zig.min.js"></script>
   
     <div id="pluginContainer">
-    	<object id="zigPlugin" type="application/x-zig" width="0" height="0">
-    		<param name="onload" value="zigPluginLoaded">
-    	</object>
+      <object id="zigPlugin" type="application/x-zig" width="0" height="0">
+        <param name="onload" value="zigPluginLoaded">
+      </object>
     </div>
-  
+
     <script>
-    
+
       var k_camera, k_scene, k_renderer;
       var skeletonPoints = [];
-      
+
       k_init();
       k_animate();
-      
-      //Initiate the three.js scene
+
+      //Initiate the three.js scene that we are going to draw dots onto.
+      //This is the black kinectSkeletonBox div
+
       function k_init() {
-      	var k_container = document.createElement('div');
-      	
-      	k_container.setAttribute("id", "kinectSkeletonBox");
-      
-      	var width = 640;
-      	var height = 480;
-      
-      	document.body.appendChild(k_container);
-      	k_camera = new THREE.PerspectiveCamera(75, width / height, 1, 10000);
-      	
-      	k_camera.position.z = 250;
-      	k_scene = new THREE.Scene();
-      	k_renderer = new THREE.CanvasRenderer();
-      	k_renderer.setSize(width, height);
-      	k_container.appendChild(k_renderer.domElement);
-      
-      
-      	// skeleton points initializations
-      	var geometry = new THREE.Geometry();
-      	for(var i = 0; i < 24; i++) {
-      		//Make 24 white circles for each of the joints
-      		var material = new THREE.ParticleCanvasMaterial({
-      			color : 0xffffff,
-      			program : function(context) {
-      				context.beginPath();
-      				context.arc(0, 0, 1, 0, Math.PI * 2, true);
-      				context.closePath();
-      				context.fill();
-      			}
-      		});
-      		var particle = new THREE.Particle(material);
-      		
-      		//Place the circles way off screen until we get user data
-      		particle.position.x = 5000;   
-      		particle.position.y = 5000;
-      		particle.position.z = 5000;
-      		particle.position.multiplyScalar(Math.random() * 3 + 50);
-      		particle.scale.x = particle.scale.y = 10;
-      		particle.material = material;
-      		
-      		k_scene.add(particle);
-      		skeletonPoints.push(particle);
-      	}
+        var k_container = document.createElement('div');
+
+        k_container.setAttribute("id", "kinectSkeletonBox");
+
+        var width = 500;
+        var height = 500;
+
+        document.body.appendChild(k_container);
+        k_camera = new THREE.PerspectiveCamera(75, width / height, 1, 10000);
+
+        k_camera.position.z = 250;
+        k_scene = new THREE.Scene();
+        k_renderer = new THREE.CanvasRenderer();
+        k_renderer.setSize(width, height);
+        k_container.appendChild(k_renderer.domElement);
+
+
+        // skeleteon points initializations
+        var geometry = new THREE.Geometry();
+        for(var i = 0; i < 25; i++) {
+          //Make 25 white circles for each of the joints we are going to recieve from the kinect feed.
+          var material = new THREE.ParticleCanvasMaterial({
+            color : 0xffffff,
+            program : function(context) {
+              context.beginPath();
+              context.arc(0, 0, 1, 0, Math.PI * 2, true);
+              context.closePath();
+              context.fill();
+            }
+          });
+          var particle = new THREE.Particle(material);
+          
+          //Place the circles way off screen until we get user data from the kinect.
+          particle.position.x = 5000;   
+          particle.position.y = 5000;
+          particle.position.z = 5000;
+          particle.position.multiplyScalar(Math.random() * 3 + 50);
+          particle.scale.x = particle.scale.y = 10;
+          particle.material = material;
+          
+          k_scene.add(particle);
+          skeletonPoints.push(particle);
+        }
       }
-      
-      
+
+
       var current_user;
       function zigPluginLoaded() {
-      	zig.init(document.getElementById("zigPlugin"));
-      	console.log("zig plugin loaded");
-      	zig.addEventListener('userfound', function(user) {
-      		console.log('Found user. ID: ' + user.id);
-      		current_user = user;
-      		current_user.addEventListener('userupdate', function(user) {
-      			//This is called every time the kinect has new user
-      			moveDots(user);
-      		});
-      		zig.addListener(current_user);
-      	});
+        zig.init(document.getElementById("zigPlugin"));
+        console.log("zig plugin loaded");
+        zig.addEventListener('userfound', function(user) {
+          console.log('Found user. ID: ' + user.id);
+          current_user = user;
+          current_user.addEventListener('userupdate', function(user) {
+            //This is called every time the kinect has new user skeleton data
+            moveDots(user);
+          });
+          zig.addListener(current_user);
+        });
       }
-      
+
       function moveDots(user){
-  			for(var i = 0; i < skeletonPoints.length; i++) {
-  			//Loop through each of the dots
-  			
-  				var kinectFeedPart = user.skeleton[i];
-  				//Get data information for each joint.
-  				if( typeof kinectFeedPart == 'undefined') { //If joint data isn't avaiable place dot offscreen
-  					var object = skeletonPoints[i];
-  					object.position.x = 5000;
-  					object.position.y = 5000;
-  
-  					continue;
-  				}
-  				var kinectFeedPosition = kinectFeedPart.position;
-  				var object = skeletonPoints[i];
-  				object.position.x = kinectFeedPosition[0] / 5;
-  				object.position.y = kinectFeedPosition[1] / 5;
-  				object.position.z = -kinectFeedPosition[2] / 5;
-  			}
+
+        for(var i = 0; i < skeletonPoints.length; i++) {
+        //Loop through each of the dots
+        
+          var kinectFeedPart = user.skeleton[i];
+          //Get data information for each joint.
+          if( typeof kinectFeedPart == 'undefined') { //If joint data isnt avaiable place dot offscreen and continue on.
+            var object = skeletonPoints[i];
+            object.position.x = 5000;
+            object.position.y = 5000;
+
+            continue;
+          }
+          var kinectFeedPosition = kinectFeedPart.position;
+          var object = skeletonPoints[i];
+          object.position.x = kinectFeedPosition[0] / 5;
+          object.position.y = kinectFeedPosition[1] / 5;
+          object.position.z = -kinectFeedPosition[2] / 5;
+        }
       }
-      
-      //Animating and rendering for three.js
-      
+
+      ///Animating and rendering for three.js scene
+
       function k_animate() {
-      	requestAnimationFrame(k_animate);
-      	k_render();
+        requestAnimationFrame(k_animate);
+        k_render();
       }
-      
+
       function k_render() {
-      	k_camera.position.x += (0 - k_camera.position.x ) * .05;
-      	k_camera.position.y += (200 - k_camera.position.y ) * .05;
-      	k_camera.lookAt(k_scene.position);
-      	k_renderer.render(k_scene, k_camera);
+        k_camera.position.x += (0 - k_camera.position.x ) * .05;
+        k_camera.position.y += (200 - k_camera.position.y ) * .05;
+        k_camera.lookAt(k_scene.position);
+        k_renderer.render(k_scene, k_camera);
       }
-    
+
     </script>
   </body>
 </html>
