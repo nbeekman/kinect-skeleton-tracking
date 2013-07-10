@@ -6,5 +6,5 @@
 }
 /* hiding zigfu logo */
 div:last-of-type {
-  visibility: hidden;
+	opacity: 0;
 } 
