@@ -45,9 +45,7 @@
         k_renderer.setSize(width, height);
         k_container.appendChild(k_renderer.domElement);
 
-
         // skeleteon points initializations
-        var geometry = new THREE.Geometry();
         for(var i = 0; i < 25; i++) {
           //Make 25 white circles for each of the joints we are going to recieve from the kinect feed.
           var material = new THREE.ParticleCanvasMaterial({
@@ -70,10 +68,34 @@
           particle.material = material;
           
           k_scene.add(particle);
-          skeletonPoints.push(particle);
+          skeletonPoints.push(particle);  
         }
+
+        // draw lines in between each joint
+        drawSkeletonLine(zig.Joint.Head, zig.Joint.Neck);
+        drawSkeletonLine(zig.Joint.Neck, zig.Joint.LeftShoulder);
+        drawSkeletonLine(zig.Joint.Neck, zig.Joint.RightShoulder);
+        drawSkeletonLine(zig.Joint.LeftShoulder, zig.Joint.Torso);
+        drawSkeletonLine(zig.Joint.RightShoulder, zig.Joint.Torso);
+        drawSkeletonLine(zig.Joint.LeftShoulder, zig.Joint.LeftElbow);
+        drawSkeletonLine(zig.Joint.LeftElbow, zig.Joint.LeftHand);
+        drawSkeletonLine(zig.Joint.RightShoulder, zig.Joint.RightElbow);
+        drawSkeletonLine(zig.Joint.RightElbow, zig.Joint.RightHand);
+        drawSkeletonLine(zig.Joint.Torso, zig.Joint.LeftHip);
+        drawSkeletonLine(zig.Joint.Torso, zig.Joint.RightHip);
+        drawSkeletonLine(zig.Joint.LeftHip, zig.Joint.LeftKnee);
+        drawSkeletonLine(zig.Joint.LeftKnee, zig.Joint.LeftFoot);
+        drawSkeletonLine(zig.Joint.RightHip, zig.Joint.RightKnee);
+        drawSkeletonLine(zig.Joint.RightKnee, zig.Joint.RightFoot);
       }
 
+      function drawSkeletonLine(joint1, joint2) {
+        var geometry = new THREE.Geometry();
+        geometry.vertices.push(skeletonPoints[joint1].position);
+        geometry.vertices.push(skeletonPoints[joint2].position);
+        var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xffffff}));
+        k_scene.add(line);
+      }
 
       var current_user;
       function zigPluginLoaded() {
