@@ -21,9 +21,12 @@
 
       var k_camera, k_scene, k_renderer;
       var skeletonPoints = [];
+      var skeletonLines = [];
 
       k_init();
       k_animate();
+
+      //drawSoccerBall();
 
       //Initiate the three.js scene that we are going to draw dots onto.
       //This is the black kinectSkeletonBox div
@@ -37,37 +40,30 @@
         var height = 500;
 
         document.body.appendChild(k_container);
-        k_camera = new THREE.PerspectiveCamera(75, width / height, 1, 10000);
+        k_camera = new THREE.PerspectiveCamera(100, width / height, 1, 10000);
 
         k_camera.position.z = 250;
         k_scene = new THREE.Scene();
-        k_renderer = new THREE.CanvasRenderer();
+        k_renderer = new THREE.WebGLRenderer();
         k_renderer.setSize(width, height);
         k_container.appendChild(k_renderer.domElement);
 
         // skeleteon points initializations
         for(var i = 0; i < 25; i++) {
           //Make 25 white circles for each of the joints we are going to recieve from the kinect feed.
-          var material = new THREE.ParticleCanvasMaterial({
-            color : 0xffffff,
-            program : function(context) {
-              context.beginPath();
-              context.arc(0, 0, 1, 0, Math.PI * 2, true);
-              context.closePath();
-              context.fill();
-            }
-          });
-          var particle = new THREE.Particle(material);
+          var material = new THREE.MeshBasicMaterial({ color : 0xffffff });
+          var particleGeom = new THREE.SphereGeometry( 5, 16, 8 );
+          var particle = new THREE.Mesh( particleGeom.clone(), material );
           
           //Place the circles way off screen until we get user data from the kinect.
-          particle.position.x = 5000;   
-          particle.position.y = 5000;
-          particle.position.z = 5000;
+          particle.position.x = Math.floor((Math.random()*100)+1);   
+          particle.position.y = Math.floor((Math.random()*100)+1);
+          particle.position.z = Math.floor((Math.random()*100)+1);
           particle.position.multiplyScalar(Math.random() * 3 + 50);
           if(i==1){ //make the head 2.5x bigger than rest of joints
-            particle.scale.x = particle.scale.y = 25;
+            particle.scale.x = particle.scale.y = 5;
           }else{
-            particle.scale.x = particle.scale.y = 10;
+            particle.scale.x = particle.scale.y = 2;
           }
           particle.material = material;
           
@@ -76,20 +72,22 @@
         }
 
         // draw lines in between each joint
-        drawSkeletonLine(zig.Joint.Head, zig.Joint.Neck);
-        drawSkeletonLine(zig.Joint.Neck, zig.Joint.LeftShoulder);
-        drawSkeletonLine(zig.Joint.Neck, zig.Joint.RightShoulder);
-        drawSkeletonLine(zig.Joint.LeftShoulder, zig.Joint.LeftHip);
-        drawSkeletonLine(zig.Joint.RightShoulder, zig.Joint.RightHip);
-        drawSkeletonLine(zig.Joint.LeftShoulder, zig.Joint.LeftElbow);
-        drawSkeletonLine(zig.Joint.LeftElbow, zig.Joint.LeftHand);
-        drawSkeletonLine(zig.Joint.RightShoulder, zig.Joint.RightElbow);
-        drawSkeletonLine(zig.Joint.RightElbow, zig.Joint.RightHand);
-        drawSkeletonLine(zig.Joint.LeftHip, zig.Joint.RightHip);
-        drawSkeletonLine(zig.Joint.LeftHip, zig.Joint.LeftKnee);
-        drawSkeletonLine(zig.Joint.LeftKnee, zig.Joint.LeftFoot);
-        drawSkeletonLine(zig.Joint.RightHip, zig.Joint.RightKnee);
-        drawSkeletonLine(zig.Joint.RightKnee, zig.Joint.RightFoot);
+        skeletonLines = [
+          new drawSkeletonLine(zig.Joint.Head, zig.Joint.Neck),
+          new drawSkeletonLine(zig.Joint.Neck, zig.Joint.LeftShoulder),
+          new drawSkeletonLine(zig.Joint.Neck, zig.Joint.RightShoulder),
+          new drawSkeletonLine(zig.Joint.LeftShoulder, zig.Joint.LeftHip),
+          new drawSkeletonLine(zig.Joint.RightShoulder, zig.Joint.RightHip),
+          new drawSkeletonLine(zig.Joint.LeftShoulder, zig.Joint.LeftElbow),
+          new drawSkeletonLine(zig.Joint.LeftElbow, zig.Joint.LeftHand),
+          new drawSkeletonLine(zig.Joint.RightShoulder, zig.Joint.RightElbow),
+          new drawSkeletonLine(zig.Joint.RightElbow, zig.Joint.RightHand),
+          new drawSkeletonLine(zig.Joint.LeftHip, zig.Joint.RightHip),
+          new drawSkeletonLine(zig.Joint.LeftHip, zig.Joint.LeftKnee),
+          new drawSkeletonLine(zig.Joint.LeftKnee, zig.Joint.LeftFoot),
+          new drawSkeletonLine(zig.Joint.RightHip, zig.Joint.RightKnee),
+          new drawSkeletonLine(zig.Joint.RightKnee, zig.Joint.RightFoot)
+        ];
       }
 
       function drawSkeletonLine(joint1, joint2) {
@@ -98,6 +96,30 @@
         geometry.vertices.push(skeletonPoints[joint2].position);
         var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xffffff, linewidth: 10}));
         k_scene.add(line);
+
+        function update() {
+          line.geometry.vertices[0].set(skeletonPoints[joint1].position.x,skeletonPoints[joint1].position.y,skeletonPoints[joint1].position.z);
+          line.geometry.vertices[1].set(skeletonPoints[joint2].position.x,skeletonPoints[joint2].position.y,skeletonPoints[joint2].position.z);
+          line.geometry.verticesNeedUpdate = true;
+        }
+        update();
+        return {update:update};
+      }
+
+      function drawSoccerBall() {
+        // Spheres
+        // Note: a standard flat rectangular image will look distorted. A "spherical projection" image will look "normal".
+
+        var light2 = new THREE.AmbientLight(0x444444);
+        k_scene.add(light2);
+        
+        // soccer ball
+        var soccerBallTexture = THREE.ImageUtils.loadTexture( 'img/soccerBall2.jpg' );
+        var soccerBallMaterial = new THREE.MeshBasicMaterial( { map: soccerBallTexture, side: THREE.DoubleSide } );
+        var sphereGeom =  new THREE.SphereGeometry( 20, 16, 8 );// radius, segmentsWidth, segmentsHeight
+        var soccerBall = new THREE.Mesh( sphereGeom.clone(), soccerBallMaterial );
+        soccerBall.position.set(0, 0, 0);
+        k_scene.add( soccerBall );  
       }
 
       var current_user;
@@ -149,6 +171,9 @@
         k_camera.position.y += (200 - k_camera.position.y ) * .05;
         k_camera.lookAt(k_scene.position);
         k_renderer.render(k_scene, k_camera);
+        for(var n = 0; n < skeletonLines.length; n++) {
+          skeletonLines[n].update();
+        }
       }
 
     </script>
