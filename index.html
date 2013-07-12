@@ -27,8 +27,9 @@
       k_animate();
 
       //drawSoccerBall();
+      drawPlanes();
 
-      //Initiate the three.js scene that we are going to draw dots onto.
+      //Initiate the three.js scene
       //This is the black kinectSkeletonBox div
 
       function k_init() {
@@ -36,11 +37,11 @@
 
         k_container.setAttribute("id", "kinectSkeletonBox");
 
-        var width = 500;
-        var height = 500;
+        var width = 640;
+        var height = 480;
 
         document.body.appendChild(k_container);
-        k_camera = new THREE.PerspectiveCamera(100, width / height, 1, 10000);
+        k_camera = new THREE.PerspectiveCamera(60, width / height, 1, 10000);
 
         k_camera.position.z = 250;
         k_scene = new THREE.Scene();
@@ -61,9 +62,9 @@
           particle.position.z = Math.floor((Math.random()*100)+1);
           particle.position.multiplyScalar(Math.random() * 3 + 50);
           if(i==1){ //make the head 2.5x bigger than rest of joints
-            particle.scale.x = particle.scale.y = 5;
+            particle.scale.x = particle.scale.y = 3;
           }else{
-            particle.scale.x = particle.scale.y = 2;
+            particle.scale.x = particle.scale.y = 1;
           }
           particle.material = material;
           
@@ -114,12 +115,39 @@
         k_scene.add(light2);
         
         // soccer ball
-        var soccerBallTexture = THREE.ImageUtils.loadTexture( 'img/soccerBall2.jpg' );
+        var soccerBallTexture = THREE.ImageUtils.loadTexture( 'img/soccerBall.jpg' );
         var soccerBallMaterial = new THREE.MeshBasicMaterial( { map: soccerBallTexture, side: THREE.DoubleSide } );
         var sphereGeom =  new THREE.SphereGeometry( 20, 16, 8 );// radius, segmentsWidth, segmentsHeight
         var soccerBall = new THREE.Mesh( sphereGeom.clone(), soccerBallMaterial );
         soccerBall.position.set(0, 0, 0);
         k_scene.add( soccerBall );  
+      }
+
+      function drawPlanes() {
+        // X axis
+        geometry = new THREE.PlaneGeometry(600, 200);
+        material = new THREE.MeshBasicMaterial({
+          color: 0x7f7f7f,
+          transparent: false,
+          opacity: 0.5
+        });
+        plane = new THREE.Mesh(geometry, material);
+        plane.rotation.x = 5;
+        plane.position.z = -350;
+        k_scene.add(plane);
+
+        // Y axis
+        geometry = new THREE.PlaneGeometry(600, 200);
+        material = new THREE.MeshBasicMaterial({
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0.75
+        });
+        plane = new THREE.Mesh(geometry, material);
+        plane.rotation.y = 1.5;
+        plane.position.z = -380;
+        k_scene.add(plane);
+
       }
 
       var current_user;
@@ -167,8 +195,8 @@
       }
 
       function k_render() {
-        k_camera.position.x += (0 - k_camera.position.x ) * .05;
-        k_camera.position.y += (200 - k_camera.position.y ) * .05;
+        //k_camera.position.x += (0 - k_camera.position.x ) * .05;
+        //k_camera.position.y += (200 - k_camera.position.y ) * .05;
         k_camera.lookAt(k_scene.position);
         k_renderer.render(k_scene, k_camera);
         for(var n = 0; n < skeletonLines.length; n++) {
