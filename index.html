@@ -22,12 +22,19 @@
       var k_camera, k_scene, k_renderer;
       var skeletonPoints = [];
       var skeletonLines = [];
+      var noKick;
+      var goalMade = false;
+      var backgroundTime;
+      var width = 640;
+      var height = 480;
+      var ball;
+      var soccerBall;
 
       k_init();
       k_animate();
 
-      //drawSoccerBall();
-      drawPlanes();
+      drawSoccerBall();
+      //drawPlanes();
 
       //Initiate the three.js scene
       //This is the black kinectSkeletonBox div
@@ -37,8 +44,8 @@
 
         k_container.setAttribute("id", "kinectSkeletonBox");
 
-        var width = 640;
-        var height = 480;
+        //var width = 640;
+        //var height = 480;
 
         document.body.appendChild(k_container);
         k_camera = new THREE.PerspectiveCamera(60, width / height, 1, 10000);
@@ -61,7 +68,7 @@
           particle.position.y = Math.floor((Math.random()*100)+1);
           particle.position.z = Math.floor((Math.random()*100)+1);
           particle.position.multiplyScalar(Math.random() * 3 + 50);
-          if(i==1){ //make the head 2.5x bigger than rest of joints
+          if(i==1){ //make the head 3x bigger than rest of joints
             particle.scale.x = particle.scale.y = 3;
           }else{
             particle.scale.x = particle.scale.y = 1;
@@ -89,6 +96,8 @@
           new drawSkeletonLine(zig.Joint.RightHip, zig.Joint.RightKnee),
           new drawSkeletonLine(zig.Joint.RightKnee, zig.Joint.RightFoot)
         ];
+
+        ball = new ball();
       }
 
       function drawSkeletonLine(joint1, joint2) {
@@ -117,10 +126,10 @@
         // soccer ball
         var soccerBallTexture = THREE.ImageUtils.loadTexture( 'img/soccerBall.jpg' );
         var soccerBallMaterial = new THREE.MeshBasicMaterial( { map: soccerBallTexture, side: THREE.DoubleSide } );
-        var sphereGeom =  new THREE.SphereGeometry( 20, 16, 8 );// radius, segmentsWidth, segmentsHeight
-        var soccerBall = new THREE.Mesh( sphereGeom.clone(), soccerBallMaterial );
-        soccerBall.position.set(0, 0, 0);
-        k_scene.add( soccerBall );  
+        var sphereGeom =  new THREE.SphereGeometry( 15, 16, 8 );// radius, segmentsWidth, segmentsHeight
+        soccerBall = new THREE.Mesh( sphereGeom.clone(), soccerBallMaterial );
+        soccerBall.position.set(0, -100, 0);
+        k_scene.add( soccerBall );
       }
 
       function drawPlanes() {
@@ -147,7 +156,6 @@
         plane.rotation.y = 1.5;
         plane.position.z = -380;
         k_scene.add(plane);
-
       }
 
       var current_user;
@@ -182,12 +190,119 @@
           var kinectFeedPosition = kinectFeedPart.position;
           var object = skeletonPoints[i];
           object.position.x = kinectFeedPosition[0] / 5;
-          object.position.y = kinectFeedPosition[1] / 5;
+          object.position.y = (kinectFeedPosition[1] / 5) - 100;
           object.position.z = -kinectFeedPosition[2] / 5;
         }
       }
 
-      ///Animating and rendering for three.js scene
+      function footMovement() {
+        var rFoot = skeletonPoints[zig.Joint.RightFoot].position;
+        var lFoot = skeletonPoints[zig.Joint.LeftFoot].position;
+        var rHip = skeletonPoints[zig.Joint.RightHip].position;
+        var lHip = skeletonPoints[zig.Joint.LeftHip].position;
+
+        if( rFoot == null || lFoot == null || rHip == null || lHip == null ) {
+          return;
+        } else {
+          if( rFoot.z > (rHip.z + 100) || lFoot.z > (lHip.z + 100) ) {
+            if( (rFoot.z > lFoot.z) && (noKick != true) ) {
+              ball.kick(rFoot.x, rFoot.y, (rHip.x)-(rFoot.x));
+              noKick = true;
+              console.log("right kick");
+            } else if ( (rFoot.z < lFoot.z) && (noKick != true) ){
+              ball.kick(lFoot.x, lFoot.y, (lHip.x)-(lFoot.x));
+              noKick = true;
+              console.log("left kick");
+            } 
+          } else {
+            noKick = false;
+          }
+        }
+      }
+
+      function ball() {
+    
+        var STARTYSPEED = 10;
+        var STARTZSPEED = 20;
+        
+        var x = 0;
+        var y = 0; 
+        var z = 0;
+        var xSpeed;
+        var ySpeed = STARTYSPEED;
+        var zSpeed = STARTZSPEED;
+        var rotationSpeed;
+        var rotation = 0;
+        var gravity = 0.3;
+        var active = false;
+        var ground = 0;
+        
+        function kick( xFoot, yFoot, xHipFoot) {
+          if(active == false) {
+            active = true;
+            x = xFoot;
+            y = -100/*yFoot*/;
+            xSpeed = xHipFoot;
+          }
+        }
+        
+        function update() {
+          if(active == true) {
+            if(z > -1500) {
+              z -= zSpeed;
+              ySpeed -= gravity;
+              y += ySpeed;
+              x -= xSpeed/2;
+              soccerBall.position.set(x,y,z);
+              console.log("x: " + x);
+              console.log("y: " + y);
+              console.log("z: " + z);
+              if(y == ground) console.log("ball hit the ground");
+            } else {
+              //if( x < ((width/2) + (goal.width/2*goalScale)) && y < ((height/2) + (goal.height/2*goalScale)) && x > ((width/2) - (goal.width/2*goalScale)) && y > ((height/2) - (goal.height/2*goalScale)) ) {
+                console.log("z: " + z);
+                goalMade = true;
+                console.log("GOOOOOOOAL");
+              //} else {
+                //console.log("MISS");
+              //}
+              backgroundTime = new Date().getTime();
+
+              //soccerBall couldn't be accessed in reset() method, so I added it to the update method
+              //reset();
+
+              // reseting the ball and its variables
+              active = false;
+              x = 0;
+              y = -100;
+              z = 0;
+              xSpeed = 0;
+              ySpeed = STARTYSPEED;
+              zSpeed = STARTZSPEED;
+              rotationSpeed = 0;
+              rotation = 0 ;
+              soccerBall.position.set(x,y,z);
+            }
+          }
+        }
+        
+        // function reset() {
+        //   active = false;
+        //   x = 0;
+        //   y = 0;
+        //   z = 0;
+        //   xSpeed = 0;
+        //   ySpeed = STARTYSPEED;
+        //   zSpeed = STARTZSPEED;
+        //   rotationSpeed = 0;
+        //   rotation = 0 ;
+        //   soccerBall.position.set(x, y, z);
+        // }
+
+        return {update:update, kick:kick/*, reset:reset*/};
+      }
+
+      //Animating and rendering for three.js scene
 
       function k_animate() {
         requestAnimationFrame(k_animate);
@@ -202,6 +317,8 @@
         for(var n = 0; n < skeletonLines.length; n++) {
           skeletonLines[n].update();
         }
+        footMovement();
+        ball.update();
       }
 
     </script>
