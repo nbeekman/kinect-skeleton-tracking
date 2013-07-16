@@ -29,11 +29,13 @@
       var height = 480;
       var ball;
       var soccerBall;
+      var leftGoalPost;
 
       k_init();
       k_animate();
 
       drawSoccerBall();
+      drawGoal();
       //drawPlanes();
 
       //Initiate the three.js scene
@@ -130,6 +132,29 @@
         soccerBall = new THREE.Mesh( sphereGeom.clone(), soccerBallMaterial );
         soccerBall.position.set(0, -100, 0);
         k_scene.add( soccerBall );
+      }
+
+      function drawGoal() {
+        //goal post material and geometry
+        var goalPostTexture = THREE.ImageUtils.loadTexture( 'img/goalPost.jpg' );
+        var goalPostMaterial = new THREE.MeshBasicMaterial( { map: goalPostTexture, side: THREE.DoubleSide } );
+        var sidePostGeom = new THREE.CubeGeometry( 10, 130, 1, 1, 1, 1 );
+        var topPostGeom = new THREE.CubeGeometry( 290, 10, 1, 1, 1, 1 );
+
+        //left post
+        leftGoalPost = new THREE.Mesh( sidePostGeom.clone(), goalPostMaterial );
+        leftGoalPost.position.set(-150,0,-250);
+        k_scene.add( leftGoalPost );
+
+        //top post
+        topGoalPost = new THREE.Mesh( topPostGeom.clone(), goalPostMaterial );
+        topGoalPost.position.set(0,60,-250);
+        k_scene.add( topGoalPost );
+
+        //left post
+        rightGoalPost = new THREE.Mesh( sidePostGeom.clone(), goalPostMaterial );
+        rightGoalPost.position.set(150,0,-250);
+        k_scene.add( rightGoalPost );
       }
 
       function drawPlanes() {
