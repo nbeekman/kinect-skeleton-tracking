@@ -8,6 +8,8 @@
   <body>
   	<script src="js/jquery.1.7.1.min.js"></script>
   	<script type="text/javascript" src="js/three.min.js"></script>
+    <script src="js/MTLLoader.js"></script>
+    <script src="js/OBJMTLLoader.js"></script>
   	<script type="text/javascript" src="js/requestAnimationFrame.js"></script>
   	<script src="js/zig.min.js"></script>
   
@@ -35,7 +37,9 @@
       k_animate();
 
       drawSoccerBall();
-      drawGoal();
+      drawGround();
+      lights();
+      //drawGoal();
       //drawPlanes();
 
       //Initiate the three.js scene
@@ -54,10 +58,24 @@
 
         k_camera.position.z = 250;
         k_scene = new THREE.Scene();
+        k_scene.fog = new THREE.Fog( 0xcce0ff, 500, 10000 );
         k_renderer = new THREE.WebGLRenderer();
         k_renderer.setSize(width, height);
         k_container.appendChild(k_renderer.domElement);
 
+        // goal model
+        var loader = new THREE.OBJMTLLoader();
+        loader.addEventListener( 'load', function ( event ) {
+          var object = event.content;
+          object.position.y = -80;
+          object.position.x = 200;
+          object.position.z = -400;
+          object.rotation.y = Math.PI/2;
+          object.rotation.x = 0.2;
+          k_scene.add( object );
+        });
+        loader.load( 'obj/soccerGoal.obj', 'obj/soccerGoal.mtl' );
+        
         // skeleteon points initializations
         for(var i = 0; i < 25; i++) {
           //Make 25 white circles for each of the joints we are going to recieve from the kinect feed.
@@ -118,14 +136,60 @@
         return {update:update};
       }
 
+      function drawGround() {
+        var initColor = new THREE.Color( 0x497f13 );
+        var initTexture = THREE.ImageUtils.generateDataTexture( 1, 1, initColor );
+
+        var groundMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, map: initTexture } );
+
+        var groundTexture = THREE.ImageUtils.loadTexture( "img/grasslight-big.jpg", undefined, function() { groundMaterial.map = groundTexture } );
+        groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+        groundTexture.repeat.set( 25, 25 );
+        groundTexture.anisotropy = 16;
+
+        var mesh = new THREE.Mesh( new THREE.PlaneGeometry( 20000, 20000 ), groundMaterial );
+        mesh.position.y = -250;
+        mesh.rotation.x = - Math.PI / 2;
+        mesh.receiveShadow = true;
+        k_scene.add( mesh );
+      }
+
+      function lights() {
+        var light, materials;
+
+        k_scene.add( new THREE.AmbientLight( 0x666666 ) );
+
+        light = new THREE.DirectionalLight( 0xdfebff, 1.75 );
+        light.position.set( 50, 200, 100 );
+        light.position.multiplyScalar( 1.3 );
+
+        light.castShadow = true;
+        //light.shadowCameraVisible = true;
+
+        light.shadowMapWidth = 2048;
+        light.shadowMapHeight = 2048;
+
+        var d = 300;
+
+        light.shadowCameraLeft = -d;
+        light.shadowCameraRight = d;
+        light.shadowCameraTop = d;
+        light.shadowCameraBottom = -d;
+
+        light.shadowCameraFar = 1000;
+        light.shadowDarkness = 0.5;
+
+        k_scene.add( light );
+
+        light = new THREE.DirectionalLight( 0x3dff0c, 0.35 );
+        light.position.set( 0, -1, 0 );
+
+        k_scene.add( light );
+      }
+
       function drawSoccerBall() {
-        // Spheres
         // Note: a standard flat rectangular image will look distorted. A "spherical projection" image will look "normal".
 
-        var light2 = new THREE.AmbientLight(0x444444);
-        k_scene.add(light2);
-        
-        // soccer ball
         var soccerBallTexture = THREE.ImageUtils.loadTexture( 'img/soccerBall.jpg' );
         var soccerBallMaterial = new THREE.MeshBasicMaterial( { map: soccerBallTexture, side: THREE.DoubleSide } );
         var sphereGeom =  new THREE.SphereGeometry( 15, 16, 8 );// radius, segmentsWidth, segmentsHeight
@@ -339,11 +403,12 @@
         //k_camera.position.y += (200 - k_camera.position.y ) * .05;
         k_camera.lookAt(k_scene.position);
         k_renderer.render(k_scene, k_camera);
+        k_renderer.setClearColor( k_scene.fog.color );
         for(var n = 0; n < skeletonLines.length; n++) {
           skeletonLines[n].update();
         }
         footMovement();
-        ball.update();
+        if(soccerBall) ball.update();
       }
 
     </script>
