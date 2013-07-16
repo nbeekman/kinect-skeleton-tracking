@@ -1,0 +1,1713 @@
+# File produced by 
+
+newmtl Cylinde100
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde101
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde102
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde103
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde104
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde105
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde106
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde107
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde108
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde109
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde110
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde111
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde112
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde113
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde114
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde115
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde116
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde117
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde118
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde119
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde120
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde121
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde122
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde123
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde124
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde125
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde126
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde127
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde128
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde129
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde130
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde131
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde132
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde133
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde134
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde135
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde136
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde137
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde138
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde139
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde140
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde141
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde142
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde143
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde144
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde145
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde146
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde147
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde148
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde149
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde150
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde151
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde152
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde153
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde154
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde155
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde156
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde157
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde158
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde159
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde160
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde161
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde162
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde163
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde164
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde165
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde166
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde167
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde168
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde169
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde170
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde171
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde172
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde173
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde174
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde175
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde176
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde177
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde178
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde179
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde180
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde181
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde182
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde183
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde184
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde185
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde186
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde187
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde188
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde189
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde190
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde191
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde192
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde193
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde194
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde195
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde196
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde197
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde198
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde199
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde200
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde201
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde202
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde203
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde204
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde205
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde206
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde207
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde208
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde209
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde210
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde211
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde212
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde213
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinde214
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder01
+  Ns 55.61
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder02
+  Ns 55.61
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder03
+  Ns 55.61
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder04
+  Ns 55.61
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder05
+  Ns 55.61
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder06
+  Ns 55.61
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder07
+  Ns 55.61
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder08
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder09
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder10
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder11
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder12
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder13
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder14
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder15
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder16
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder17
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder18
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder19
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder20
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder21
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder22
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder23
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder24
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder25
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder26
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder27
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder28
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder29
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder30
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder31
+  Ns 26.4
+  d 1.0
+  illum 2
+  Kd 0.9255 1.0 0.6588
+  Ka 0.1176 0.1176 0.1176
+  Ks 0.7529 0.7529 0.7529
+
+newmtl Cylinder32
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder33
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder34
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder35
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder36
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder37
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder38
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder39
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder40
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder41
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder42
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder43
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder44
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder45
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder46
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder47
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder48
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder49
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder50
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder51
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder52
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder53
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder54
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder55
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder56
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder57
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder58
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder59
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder60
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder61
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder62
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder63
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder64
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder65
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder66
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder67
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder68
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder69
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder70
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder71
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder72
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder73
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder74
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder75
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder76
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder77
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder78
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder79
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder80
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder81
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder82
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder83
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder84
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder85
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder86
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder87
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder88
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder89
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder90
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder91
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder92
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder93
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder94
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder95
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder96
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder97
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder98
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
+
+newmtl Cylinder99
+  Ns 13.7
+  d 1.0
+  illum 2
+  Kd 1.0 1.0 1.0
+  Ka 1.0 1.0 1.0
+  Ks 0.898 0.898 0.898
