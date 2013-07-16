@@ -56,6 +56,7 @@
         document.body.appendChild(k_container);
         k_camera = new THREE.PerspectiveCamera(60, width / height, 1, 10000);
 
+        k_camera.position.y = 150;
         k_camera.position.z = 250;
         k_scene = new THREE.Scene();
         k_scene.fog = new THREE.Fog( 0xcce0ff, 500, 10000 );
@@ -69,9 +70,9 @@
           var object = event.content;
           object.position.y = -80;
           object.position.x = 200;
-          object.position.z = -400;
+          object.position.z = -500;
           object.rotation.y = Math.PI/2;
-          object.rotation.x = 0.2;
+          //object.rotation.x = 0.2;
           k_scene.add( object );
         });
         loader.load( 'obj/soccerGoal.obj', 'obj/soccerGoal.mtl' );
@@ -280,7 +281,7 @@
           var object = skeletonPoints[i];
           object.position.x = kinectFeedPosition[0] / 5;
           object.position.y = (kinectFeedPosition[1] / 5) - 100;
-          object.position.z = -kinectFeedPosition[2] / 5;
+          object.position.z = (kinectFeedPosition[2] / 5) - 500;
         }
       }
 
@@ -289,19 +290,18 @@
         var lFoot = skeletonPoints[zig.Joint.LeftFoot].position;
         var rHip = skeletonPoints[zig.Joint.RightHip].position;
         var lHip = skeletonPoints[zig.Joint.LeftHip].position;
-
         if( rFoot == null || lFoot == null || rHip == null || lHip == null ) {
           return;
         } else {
-          if( rFoot.z > (rHip.z + 100) || lFoot.z > (lHip.z + 100) ) {
+          if( rHip.z > (rFoot.z + 100) || lHip.z > (lFoot.z + 100) ) {
             if( (rFoot.z > lFoot.z) && (noKick != true) ) {
-              ball.kick(rFoot.x, rFoot.y, (rHip.x)-(rFoot.x));
-              noKick = true;
-              console.log("right kick");
-            } else if ( (rFoot.z < lFoot.z) && (noKick != true) ){
               ball.kick(lFoot.x, lFoot.y, (lHip.x)-(lFoot.x));
               noKick = true;
               console.log("left kick");
+            } else if ( (rFoot.z < lFoot.z) && (noKick != true) ){
+              ball.kick(rFoot.x, rFoot.y, (rHip.x)-(rFoot.x));
+              noKick = true;
+              console.log("right kick");
             } 
           } else {
             noKick = false;
