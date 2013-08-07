@@ -12,6 +12,8 @@
     <script src="js/OBJMTLLoader.js"></script>
   	<script type="text/javascript" src="js/requestAnimationFrame.js"></script>
   	<script src="js/zig.min.js"></script>
+    <script src="fonts/helvetiker_bold.typeface.js"></script>
+    <script src="fonts/helvetiker_regular.typeface.js"></script>
   
     <div id="pluginContainer">
       <object id="zigPlugin" type="application/x-zig" width="0" height="0">
@@ -26,57 +28,49 @@
       var skeletonLines = [];
       var noKick;
       var goalMade = false;
-      var backgroundTime;
       var width = 640;
       var height = 480;
       var ball;
       var soccerBall;
+      var textMesh;
+
+      // on/off switches
+      var mouseNav = false;
+      var dotsVisible = false;
+
+      // goal dimensions
+      var goalX = 190;
+      var goalTopY = 75; 
+      var goalBottomY = -113;
+      var goalFrontZ = -400;
+      var goalBackZ = -600;
 
       k_init();
       k_animate();
 
-      drawSoccerBall();
-      drawGround();
       lights();
-      //drawGoal();
+      drawGround();
+      drawGoal();
+      drawSoccerBall();
+      madeGoalMessage();
       //drawPlanes();
       //drawGoalPoints();
+      
 
       //Initiate the three.js scene
       //This is the black kinectSkeletonBox div
 
       function k_init() {
         var k_container = document.createElement('div');
-
         k_container.setAttribute("id", "kinectSkeletonBox");
-
-        //var width = 640;
-        //var height = 480;
 
         document.body.appendChild(k_container);
         k_camera = new THREE.PerspectiveCamera(60, width / height, 1, 10000);
-
-        //k_camera.position.x = 500;
-        k_camera.position.y = 150 /*150*/;
-        k_camera.position.z = 250 /*250*/;
         k_scene = new THREE.Scene();
         k_scene.fog = new THREE.Fog( 0xcce0ff, 500, 10000 );
         k_renderer = new THREE.WebGLRenderer();
         k_renderer.setSize(width, height);
         k_container.appendChild(k_renderer.domElement);
-
-        // goal model
-        var loader = new THREE.OBJMTLLoader();
-        loader.addEventListener( 'load', function ( event ) {
-          var goal = event.content;
-          goal.position.y = -80;
-          goal.position.x = 200;
-          goal.position.z = -500;
-          goal.rotation.y = Math.PI/2;
-          //object.rotation.x = 0.2;
-          k_scene.add( goal );
-        });
-        loader.load( 'obj/soccerGoal.obj', 'obj/soccerGoal.mtl' );
         
         // skeleteon points initializations
         for(var i = 0; i < 25; i++) {
@@ -97,7 +91,10 @@
           }
           particle.material = material;
           
-          k_scene.add(particle);
+          if(dotsVisible == true) {
+            k_scene.add(particle);
+          }
+
           skeletonPoints.push(particle);  
         }
 
@@ -127,6 +124,7 @@
         geometry.vertices.push(skeletonPoints[joint1].position);
         geometry.vertices.push(skeletonPoints[joint2].position);
         var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({color: 0xffffff, linewidth: 10}));
+        line.scale.x = line.scale.y = 0.5;
         k_scene.add(line);
 
         function update() {
@@ -150,7 +148,7 @@
         groundTexture.anisotropy = 16;
 
         var mesh = new THREE.Mesh( new THREE.PlaneGeometry( 20000, 20000 ), groundMaterial );
-        mesh.position.y = -250;
+        mesh.position.y = -113;
         mesh.rotation.x = - Math.PI / 2;
         mesh.receiveShadow = true;
         k_scene.add( mesh );
@@ -196,7 +194,7 @@
         var soccerBallMaterial = new THREE.MeshBasicMaterial( { map: soccerBallTexture, side: THREE.DoubleSide } );
         var sphereGeom =  new THREE.SphereGeometry( 15, 16, 8 );// radius, segmentsWidth, segmentsHeight
         soccerBall = new THREE.Mesh( sphereGeom.clone(), soccerBallMaterial );
-        soccerBall.position.set(0, -100, 0);
+        soccerBall.position.y = -100;
         k_scene.add( soccerBall );
       }
 
@@ -204,20 +202,21 @@
         var darkMaterial = new THREE.MeshBasicMaterial( { color: 0xffffcc } );
         var wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: false, transparent: true } ); 
         var multiMaterial = [ darkMaterial, wireframeMaterial ];
+
         //front bottom left
         var shape = THREE.SceneUtils.createMultiMaterialObject( 
           new THREE.SphereGeometry( 5, 32, 16 ), 
           multiMaterial 
         );
-        shape.position.set(-155, 0, -270);
+        shape.position.set(-goalX, goalBottomY, goalFrontZ);
         k_scene.add( shape );
 
-        //front bottom right
+        //front top left
         shape = THREE.SceneUtils.createMultiMaterialObject( 
           new THREE.SphereGeometry( 5, 32, 16 ), 
           multiMaterial 
         );
-        shape.position.set(155, 0, -270);
+        shape.position.set(-goalX, goalTopY, goalFrontZ);
         k_scene.add( shape );
 
         //back bottom left
@@ -225,31 +224,90 @@
           new THREE.SphereGeometry( 5, 32, 16 ), 
           multiMaterial 
         );
-        shape.position.set(-155, 0, -470);
+        shape.position.set(-goalX, goalBottomY, goalBackZ);
+        k_scene.add( shape );
+
+        //back top left
+        shape = THREE.SceneUtils.createMultiMaterialObject( 
+          new THREE.SphereGeometry( 5, 32, 16 ), 
+          multiMaterial 
+        );
+        shape.position.set(-goalX, goalTopY, goalBackZ);
+        k_scene.add( shape );
+
+        //front bottom right
+        shape = THREE.SceneUtils.createMultiMaterialObject( 
+          new THREE.SphereGeometry( 5, 32, 16 ), 
+          multiMaterial 
+        );
+        shape.position.set(goalX, goalBottomY, goalFrontZ);
+        k_scene.add( shape );
+
+        //front top right
+        shape = THREE.SceneUtils.createMultiMaterialObject( 
+          new THREE.SphereGeometry( 5, 32, 16 ), 
+          multiMaterial 
+        );
+        shape.position.set(goalX, goalTopY, goalFrontZ);
+        k_scene.add( shape );
+
+        //back bottom right
+        shape = THREE.SceneUtils.createMultiMaterialObject( 
+          new THREE.SphereGeometry( 5, 32, 16 ), 
+          multiMaterial 
+        );
+        shape.position.set(goalX, goalBottomY, goalBackZ);
+        k_scene.add( shape );
+
+        //back top right
+        shape = THREE.SceneUtils.createMultiMaterialObject( 
+          new THREE.SphereGeometry( 5, 32, 16 ), 
+          multiMaterial 
+        );
+        shape.position.set(goalX, goalTopY, goalBackZ);
         k_scene.add( shape );
       }
 
       function drawGoal() {
-        //goal post material and geometry
-        var goalPostTexture = THREE.ImageUtils.loadTexture( 'img/goalPost.jpg' );
-        var goalPostMaterial = new THREE.MeshBasicMaterial( { map: goalPostTexture, side: THREE.DoubleSide } );
-        var sidePostGeom = new THREE.CubeGeometry( 10, 130, 1, 1, 1, 1 );
-        var topPostGeom = new THREE.CubeGeometry( 290, 10, 1, 1, 1, 1 );
+        // goal model
+        var loader = new THREE.OBJMTLLoader();
+        loader.addEventListener( 'load', function ( event ) {
+          var goal = event.content;
+          goal.position.y = -113;
+          goal.position.x = 200;
+          goal.position.z = -500;
+          goal.rotation.y = Math.PI/2;
+          k_scene.add( goal );
+        });
+        loader.load( 'obj/soccerGoal.obj', 'obj/soccerGoal.mtl' );
+      }
 
-        //left post
-        leftGoalPost = new THREE.Mesh( sidePostGeom.clone(), goalPostMaterial );
-        leftGoalPost.position.set(-150,0,-250);
-        k_scene.add( leftGoalPost );
+      function madeGoalMessage() {
+        // add 3D text
+        var materialFront = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
+        var materialSide = new THREE.MeshBasicMaterial( { color: 0x000088 } );
+        var materialArray = [ materialFront, materialSide ];
+        var textGeom = new THREE.TextGeometry( "GOOOOOAL!", 
+        {
+          size: 18, height: 4, curveSegments: 3,
+          font: "helvetiker", weight: "bold", style: "normal",
+          bevelThickness: 1, bevelSize: 2, bevelEnabled: true,
+          material: 0, extrudeMaterial: 1
+        });
+        // weight: normal, bold
+        
+        var textMaterial = new THREE.MeshFaceMaterial(materialArray);
+        textMesh = new THREE.Mesh(textGeom, textMaterial );
+        
+        textGeom.computeBoundingBox();
+        var textWidth = textGeom.boundingBox.max.x - textGeom.boundingBox.min.x;
+        
+        textMesh.position.set( -0.5 * textWidth, 125, 0 );
+        //textMesh.rotation.x = -Math.PI / 4;
+        k_scene.add(textMesh);
 
-        //top post
-        topGoalPost = new THREE.Mesh( topPostGeom.clone(), goalPostMaterial );
-        topGoalPost.position.set(0,60,-250);
-        k_scene.add( topGoalPost );
-
-        //left post
-        rightGoalPost = new THREE.Mesh( sidePostGeom.clone(), goalPostMaterial );
-        rightGoalPost.position.set(150,0,-250);
-        k_scene.add( rightGoalPost );
+        //hide made goal message initially
+        textMesh.visible = false;
       }
 
       function drawPlanes() {
@@ -310,7 +368,7 @@
           var kinectFeedPosition = kinectFeedPart.position;
           var object = skeletonPoints[i];
           object.position.x = kinectFeedPosition[0] / 5;
-          object.position.y = (kinectFeedPosition[1] / 5) - 100;
+          object.position.y = (kinectFeedPosition[1] / 5)/* - 100*/;
           object.position.z = (kinectFeedPosition[2] / 5) - 500;
         }
       }
@@ -367,7 +425,7 @@
         
         function update() {
           if(active == true) {
-            if(z > -550) {
+            if(z > -600) {
               z -= zSpeed;
               ySpeed -= gravity;
               y += ySpeed;
@@ -378,19 +436,19 @@
               // console.log("z: " + z);
               if(y == ground) console.log("ball hit the ground");
             } else {
-              // goal.position.y = -80;
-              // goal.position.x = 200;
-              // goal.position.z = -500;
-              //if( x < ((width/2) + 300)/*right*/ && y < ((height/2) + 200)/*top*/ && x > ((width/2) - 300)/*left*/ && y > ((height/2) - 200)/*bottom*/ ) {
+              if( x < goalX/*right*/ && y < goalTopY/*top*/ && x > -goalX/*left*/ && y > goalBottomY/*bottom*/ ) {
                 goalMade = true;
-                console.log("GOOOOOOOAL");
-              // } else {
-              //   console.log("MISS");
-              // }
-              backgroundTime = new Date().getTime();
+                //console.log("GOOOOOOOAL");
+                //show 3d goal made message
+                textMesh.visible = true;
+              } else {
+                console.log("MISS");
+              }
 
-              //soccerBall couldn't be accessed in reset() method, so I added it to the update method
-              //reset();
+              //hiding goal made message after 3 seconds
+              setTimeout(function(){
+                textMesh.visible = false;
+              }, 3000);
 
               // reseting the ball and its variables
               active = false;
@@ -401,26 +459,13 @@
               ySpeed = STARTYSPEED;
               zSpeed = STARTZSPEED;
               rotationSpeed = 0;
-              rotation = 0 ;
+              rotation = 0;
               soccerBall.position.set(x,y,z);
             }
           }
         }
-        
-        // function reset() {
-        //   active = false;
-        //   x = 0;
-        //   y = 0;
-        //   z = 0;
-        //   xSpeed = 0;
-        //   ySpeed = STARTYSPEED;
-        //   zSpeed = STARTZSPEED;
-        //   rotationSpeed = 0;
-        //   rotation = 0 ;
-        //   soccerBall.position.set(x, y, z);
-        // }
 
-        return {update:update, kick:kick/*, reset:reset*/};
+        return {update:update, kick:kick};
       }
 
       //Animating and rendering for three.js scene
@@ -431,8 +476,30 @@
       }
 
       function k_render() {
-        //k_camera.position.x += (0 - k_camera.position.x ) * .05;
-        //k_camera.position.y += (200 - k_camera.position.y ) * .05;
+        
+        if(mouseNav == true) {
+          var mousePos = {
+            x: 0,
+            y: 0
+          };
+          window.onmousemove = handleMouseMove;
+          function handleMouseMove(e) {
+              e = e || window.e; // IE-ism
+              mousePos = {
+                  x: (e.clientX - 400),
+                  y: (e.clientY - 250)
+              };
+              k_camera.position.set(mousePos.x, mousePos.y, 250);
+          }
+        } else {
+          //if(skeletonPoints[0].position.x < 1000){
+            //k_camera.position.set(skeletonPoints[2].x, 150, 250);
+            //console.log(skeletonPoints[2].position.x);
+          //}else{
+            k_camera.position.set(0, 150, 250);
+          //}
+        }
+        
         k_camera.lookAt(k_scene.position);
         k_renderer.render(k_scene, k_camera);
         k_renderer.setClearColor( k_scene.fog.color );
